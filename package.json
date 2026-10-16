@@ -1,0 +1,10 @@
+{
+  "name": "fit-club-s-day",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "FITCLUB Mini CTF public source snapshot",
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

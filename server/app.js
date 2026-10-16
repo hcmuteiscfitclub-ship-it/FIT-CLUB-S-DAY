@@ -9,6 +9,7 @@ const staticFiles = {
   '/app.js': ['app.js', 'text/javascript'],
   '/styles.css': ['styles.css', 'text/css'],
   '/osint.js': ['osint.js', 'text/javascript'],
+  '/osint-brief.js': ['osint-brief.js', 'text/javascript'],
   '/favicon.svg': ['favicon.svg', 'image/svg+xml']
 };
 for (const route of ['/osint', '/osint/notes']) staticFiles[route] = ['osint.html', 'text/html'];
@@ -16,8 +17,6 @@ for (const route of ['/osint', '/osint/notes']) staticFiles[route] = ['osint.htm
 export function createApp(options = {}) {
   const game = new Game(options);
   const limits = new Map();
-  const repositoryUrl = options.repositoryUrl ?? process.env.PUBLIC_REPOSITORY_URL ?? '';
-  if (repositoryUrl && !/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/?$/.test(repositoryUrl)) throw new Error('PUBLIC_REPOSITORY_URL must be a GitHub repository HTTPS URL.');
   function json(res, status, value) { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' }); res.end(JSON.stringify(value)); }
   function rate(id, route, res) {
     const now = Date.now(); const key = `${id}:${route}`; let item = limits.get(key);
@@ -54,7 +53,7 @@ export function createApp(options = {}) {
           sid = game.createSession();
           res.setHeader('Set-Cookie', `fitclub_session=${sid}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000${process.env.COOKIE_SECURE === 'true' ? '; Secure' : ''}`);
         }
-        if (req.method === 'GET' && path === '/api/state') return json(res, 200, { ...game.state(sid), repositoryUrl });
+        if (req.method === 'GET' && path === '/api/state') return json(res, 200, game.state(sid));
         if (req.method !== 'POST') fail('Không tìm thấy API.', 404);
         const data = await body(req);
         if (path === '/api/osint' || path === '/api/chat') rate(sid, path, res);

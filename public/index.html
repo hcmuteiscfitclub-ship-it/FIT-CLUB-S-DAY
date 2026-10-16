@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f9ff">
   <meta name="description" content="Ba thử thách nhỏ về an ninh mạng. Trả lời câu hỏi, tìm dấu vết và trò chuyện để khám phá flag.">
-  <title>FITCLUB — Mini CTF</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>HISC — Mini CTF</title>
+  <link rel="icon" href="/hisc-logo.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <script src="/app.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Đến nội dung chính</a>
-  <header class="site-header"><a class="brand" href="/" aria-label="FITCLUB Mini CTF"><span class="brand-mark">F<span>↗</span></span><span>FITCLUB<small>MINI CTF</small></span></a><div class="header-actions"><span class="timer" id="timer" aria-label="Thời gian đã chơi" hidden>00:00</span><button class="hint-button" id="help-button" data-action="hints" data-busy hidden><span aria-hidden="true">✧</span> Gợi ý</button></div></header>
+  <header class="site-header"><a class="brand" href="/" aria-label="HISC Mini CTF"><img class="brand-logo" src="/hisc-logo.png" alt="" width="44" height="50"><span>HISC<small>MINI CTF</small></span></a><div class="header-actions"><span class="timer" id="timer" aria-label="Thời gian đã chơi" hidden>00:00</span><button class="hint-button" id="help-button" data-action="hints" data-busy hidden><span aria-hidden="true">✧</span> Gợi ý</button></div></header>
   <div class="player-shell"><nav class="journey" aria-label="Tiến trình thử thách"><ol id="stepper"><li class="step current"><span class="step-number">1</span><span>Kiến thức</span><span class="step-line"></span></li><li class="step"><span class="step-number">2</span><span>Tìm dấu vết</span><span class="step-line"></span></li><li class="step"><span class="step-number">3</span><span>Chatbot</span></li></ol></nav>
     <main id="main" tabindex="-1"><div class="panel initial-loading"><span class="loading-dots" aria-hidden="true">•••</span><p>Đang chuẩn bị câu hỏi cho bạn…</p></div></main>
   </div>
-  <footer class="footer"><span>FITCLUB Mini CTF</span><span>Học một chút. Khám phá một chút. <span aria-hidden="true">✦</span></span></footer>
+  <footer class="footer"><span>HISC Mini CTF</span><span>Học một chút. Khám phá một chút. <span aria-hidden="true">✦</span></span></footer>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <dialog id="hint-dialog" aria-labelledby="hint-title"><div class="dialog-top"><span class="eyebrow">MỘT CHÚT TRỢ GIÚP</span><button class="icon-button" data-action="close-hints" aria-label="Đóng gợi ý">×</button></div><h2 id="hint-title">Thử nhìn theo một hướng khác.</h2><p class="muted">Gợi ý không trừ điểm. Cứ thoải mái khám phá nhé.</p><div id="hint-content"></div></dialog>
 </body>

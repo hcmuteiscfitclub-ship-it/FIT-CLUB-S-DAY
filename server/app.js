@@ -10,7 +10,8 @@ const staticFiles = {
   '/styles.css': ['styles.css', 'text/css'],
   '/osint.js': ['osint.js', 'text/javascript'],
   '/osint-brief.js': ['osint-brief.js', 'text/javascript'],
-  '/favicon.svg': ['favicon.svg', 'image/svg+xml']
+  '/favicon.svg': ['favicon.svg', 'image/svg+xml'],
+  '/hisc-logo.png': ['hisc-logo.png', 'image/png']
 };
 for (const route of ['/osint', '/osint/notes']) staticFiles[route] = ['osint.html', 'text/html'];
 

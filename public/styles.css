@@ -15,3 +15,8 @@
 .dossier .brief-task{padding-top:16px;border-top:1px solid var(--border)}
 .osint-brief{min-width:0;overflow-wrap:anywhere}
 @media(max-width:600px){.handoff-chat li{max-width:98%;padding:12px}.handoff-chat{gap:10px}}
+
+/* HISC identity uses the supplied original artwork without cropping. */
+.brand-logo{display:block;width:44px;height:50px;object-fit:contain;flex-shrink:0}
+.bot-avatar.hisc-avatar{object-fit:contain;background:#fff;border:1px solid var(--border);border-radius:8px;padding:3px}
+@media(max-width:700px){.brand-logo{width:38px;height:44px}}
